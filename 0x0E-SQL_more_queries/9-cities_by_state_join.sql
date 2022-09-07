@@ -3,7 +3,6 @@
 --Results must be sorted in ascending order by cities.id
 --You can use only one SELECT statement
 
-SELECT cities.id
-FROM cities.name
-WHERE states.name 
-JOIN hbtn_0d_usa.
+SELECT cities.id,cities.name,states.name
+FROM cities
+WHERE hbtn_0d_usa
