@@ -4,6 +4,7 @@
 --You can use only one SELECT statement
 
 SELECT cities.id,cities.name,states.name
-FROM states
-INNER JOIN cities
-ON states.id = cities.state_id;
+FROM cities
+INNER JOIN states
+ON states.id = cities.state_id
+ORDER BY cities.id;
