@@ -4,5 +4,6 @@
 --You can use only one SELECT statement
 
 SELECT cities.id,cities.name,states.name
-FROM cities
-WHERE hbtn_0d_usa
+FROM states
+INNER JOIN cities
+ON states.id = cities.state_id;
