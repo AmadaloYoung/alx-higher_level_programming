@@ -3,7 +3,7 @@
 --Results must be sorted in ascending order by cities.id
 --You can use only one SELECT statement
 
-SELECT cities.id,cities.name,states.name
+SELECT cities.id, cities.name, states.name
 FROM cities
 INNER JOIN states
 ON states.id = cities.state_id
