@@ -1,4 +1,4 @@
-#2-matrix_divided.txt
+# 2-matrix_divided.txt
 
 ==============================
 How to Use 2-matrix_divided.py
@@ -62,6 +62,35 @@ Integers and floats can be combined.
     >>> print(matrix_divided(matrix, 3))
     [[0.33, -0.73, 1.0, 1.47, 1.67], [-2.2, 2.33, 2.67, 3.33, 3.33]]
 
+Invalid Matrices
+==============
+
+The parameter ``matrix`` must be a list of lists consisting of either ints or
+floats. If ``matrix`` is not a list, a TypeError is raised.
+
+::
+
+    >>> matrix = "not a list"
+    >>> print(matrix_divided(matrix, 3))
+    Traceback (most recent call last):
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+::
+
+    >>> matrix = None
+    >>> print(matrix_divided(matrix, 3))
+    Traceback (most recent call last):
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+Note that an empty list will raise the TypeError.
+
+::
+
+    >>> matrix = []
+    >>> print(matrix_divided(matrix, 3))
+    Traceback (most recent call last):
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
 But an empty list of lists will succeed.
 
 ::
@@ -69,6 +98,29 @@ But an empty list of lists will succeed.
     >>> matrix = [[]]
     >>> print(matrix_divided(matrix, 3))
     [[]]
+
+An identical TypeError is raised if ``matrix`` is not specifically a list of
+lists.
+
+::
+
+    >>> matrix = [1, 2, 3]
+    >>> print(matrix_divided(matrix, 3))
+    Traceback (most recent call last):
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+The same TypeError is raised yet again if any elements in ``matrix`` are
+neither ints nor floats.
+
+::
+
+    >>> matrix = [
+    ...     [1, 2, 3],
+    ...     [4, "not a number", 6]
+    ... ]
+    >>> print(matrix_divided(matrix, 3))
+    Traceback (most recent call last):
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
 
 
 Finally, all the rows in ``matrix`` must be the same size. If any rows are
@@ -102,7 +154,6 @@ is raised.
 
 ::
 
-
     >>> print(matrix_divided(matrix, None))
     Traceback (most recent call last):
     TypeError: div must be a number
@@ -114,4 +165,3 @@ is raised.
     >>> print(matrix_divided(matrix, 0))
     Traceback (most recent call last):
     ZeroDivisionError: division by zero
-

@@ -1,11 +1,11 @@
 #!/usr/bin/python3
-"""Mylist class"""
+"""defining class Mylist"""
 
 
 class MyList(list):
     """defining function print_sorted"""
     def __init__(self):
-        """initializing the object"""
+        """initialize the object"""
         super().__init__()
 
     def print_sorted(self):
